@@ -11,6 +11,6 @@ with temp as (
 	using(kode_customer)
 	where td.no_entry_do not in (select no_entry_do from tr_inv)
 )
-select * , DATEDIFF(date_measurement, tgl_do) as diff
+select * , DATEDIFF(date_measurement, tgl_do) as aging
 from temp
-order by diff desc 
+order by aging desc
