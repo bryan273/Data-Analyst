@@ -1,5 +1,5 @@
 with temp as (
-	select td.no_do, mc.nama_customer, td.tgl_do, 
+	select td.no_do, mc.nama_customer, DATE(td.tgl_do) tgl_do, 
 		   date("2018-02-01") as date_measurement
 	from tr_do td
 	join tr_so ts
@@ -9,4 +9,4 @@ with temp as (
 	where td.no_entry_do not in (select no_entry_do from tr_inv)
 ) select * , DATEDIFF(date_measurement, tgl_do) as aging
 from temp
-order by aging desc
+order by aging desc, no_do asc

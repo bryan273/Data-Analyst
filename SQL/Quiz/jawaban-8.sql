@@ -11,8 +11,8 @@ temp2 as(
 			   else regexp_substr(jumlah, "\\d+") end as qty,	
 			total
 	from temp
-)
-select date(tanggal) as tanggal, qty*1 as qty, 
-		total/qty as harga_satuan, total*1 as total
+) select date(tanggal) as tanggal, convert(qty*1,signed) as qty, 
+		convert(total/qty,signed) as harga_satuan, 
+		convert(total*1,signed) as total
 from temp2
 order by 1

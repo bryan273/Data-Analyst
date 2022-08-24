@@ -13,8 +13,8 @@ with temp as(
 	on ts.no_entry_so = td.no_entry_so
 	join tr_inv ti 
 	on td.no_entry_do = ti.no_entry_do
-) select vendor, sum(round(qty*harga_satuan)) as amount
+) select vendor, convert(sum(round(qty*harga_satuan)),signed) as amount
 from temp
 group by 1
-order by 2 desc
+order by 2 desc, 1 asc
 limit 3

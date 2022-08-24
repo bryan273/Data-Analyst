@@ -1,0 +1,11 @@
+"kode_produk","nama_product","jenis","harga_satuan","kode_vendor"
+A001,Susu soda gembira,Soda,5000,V001
+A002,Soda Segar,Soda,5500,V001
+A003,Teh Celup,Teh,4200,V002
+A004,Teh 500,Teh,3500,V003
+A005,Ice Soda,Soda,6000,V003
+A006,Air kemasan,Air Minum,7500,V004
+A007,Air Cap Jernih,Air Minum,6000,V005
+A008,Teh daun pucuk,Teh,4500,V006
+A009,Jus Segar Murni,Jus,7000,V004
+A010,Soda gembira ria,Soda,12000,V001

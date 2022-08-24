@@ -11,7 +11,7 @@ with temp as(
 	using(kode_customer)
 	join ms_product mp 
 	on ts.kode_barang = mp.kode_produk
-) select no_do, kode_customer, tgl_do, qty,
-	   round(1.1*qty*(harga_satuan)+ongkos_kirim) as amount
+) select no_do, kode_customer, tgl_do, convert(qty,signed) as qty,
+	   convert(round(1.1*qty*(harga_satuan)+ongkos_kirim),signed) as amount
 from temp
 order by 1
